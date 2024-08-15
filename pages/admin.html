@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../styles/style.css" />
+    <link rel="stylesheet" type="text/css" href="../styles/logged.css" />
+    <link rel="stylesheet" type="text/css" href="../styles/adm-roleta.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <title>Document</title>
+</head>
+
+<body>
+    <section class="section-flex">
+
+        <section class="side-bar">
+            <div class="title-user">
+                <i id="skip-side-bar" class="fa-solid fa-circle-chevron-right"></i>
+                <h3 id="user-name"></h3>
+            </div>
+
+            <div class="wrap-ul-admin">
+                <ul class="ul-user">
+                    <li id="clientes" class="li-topics"><i class="fa-solid fa-people-line i-side-bar"
+                            style="display: none;text-align: center;"></i>
+                        <div class="side-bar-full">CLIENTES</div>
+                    </li>
+                    <li id="produtos"><i class="fa-solid fa-burger i-side-bar"
+                            style="display: none;text-align: center;"></i>
+                        <div class="side-bar-full">CADASTRAR PRODUTOS</div>
+                    </li>
+                    <li id="usuarios"><i class="fa-solid fa-user-plus i-side-bar"
+                            style="display: none;text-align: center;"></i>
+                        <div class="side-bar-full">CADASTRAR USER</div>
+                    </li>
+                    <!-- <li id="pontos">ABATER PONTOS</li> -->
+                    <li id="roleta"><i class="fa-solid fa-dharmachakra i-side-bar"
+                            style="display: none;text-align: center;"></i>
+                        <div class="side-bar-full">ROLETA</div>
+                    </li>
+                    <li id="pontos-produtos"><i class="fa-solid fa-arrow-right-arrow-left i-side-bar"
+                            style="display: none;text-align: center;"></i>
+                        <div class="side-bar-full">PONTOS por PRODUTOS</div>
+                    </li>
+                    <li id="send"><i class="fa-solid fa-sack-dollar i-side-bar"
+                            style="display: none;text-align: center;"></i>
+                        <div class="side-bar-full">ENVIAR PONTOS</div>
+                    </li>                    
+                    <li id="client-screen"><i class="fa-solid fa-tablet-screen-button i-side-bar"
+                            style="display: none;text-align: center;"></i>
+                        <div class="side-bar-full">TELA TABLET</div>
+                    </li>
+                    <li id="quit"><i class="fa-solid fa-right-from-bracket i-side-bar"
+                            style="display: none;text-align: center;"></i>
+                        <div class="side-bar-full">SAIR</div>
+                    </li>
+                </ul>
+            </div>
+            <!--wrap-ul-admin-->
+        </section>
+        <section class="body-logged-section">
+
+            <div class="produtos-content contents-logged">
+                <div class="wrap-content-clientes">
+                    <form id="manage-produto">
+                        <div class="wrap-input half-flex">
+                            <div>
+                                <input id="produto" type="text" placeholder="Descrição" required />
+                            </div>
+                            <div>
+                                <input id="pontos-produto" type="number" placeholder="pontos" required />
+                            </div>
+                        </div>
+                        <div class="wrap-input half-flex">
+                            <div>
+                                <input id="sku" type="number" required placeholder="Código do produto" />
+                            </div>
+                            <div>
+                                <button id="salvar-produto" class="btn-enviar">Salvar</button>
+                                <button id="atualisar-produto" class="btn-enviar"
+                                    style="display: none;">Atualisar</button>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="message-pannel">
+                        <h3 id="title-message"></h3>
+                    </div>
+
+                    <div class="wrap-produtos">
+                        <div class="message-pannel">
+                            <h3></h3>
+                        </div>
+                        <div class="wrap-table-produtos"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pontos-content contents-logged">pontos</div>
+
+            <div class="roleta-content contents-logged">
+                <div class="wrap-roleta-contents" style="width: 100%; height: 100%;">
+                    <div class="list-roleta" style="width: 30%;">
+                        <ul id="ul-list-roleta" class="ul-list-roleta">
+                            <!-- <li>fritas</li>
+                            <li>coca cola</li>
+                            <li>fanta</li>
+                            <li>brahma 250ml</li>
+                            <li>sprite</li>
+                            <li>fritas</li>
+                            <li>coca cola</li>
+                            <li>fanta</li>
+                            <li>brahma 250ml</li>
+                            <li>sprite</li>
+                            <li>fritas</li>
+                            <li>coca cola</li>
+                            <li>fanta</li>
+                            <li>brahma 250ml</li>
+                            <li>sprite</li>
+                            <li>fritas</li>
+                            <li>coca cola</li>
+                            <li>fanta</li>
+                            <li>brahma 250ml</li>
+                            <li>sprite</li> -->
+                        </ul>
+                    </div>
+
+                    <div class="painel-roleta" style="width: 70%;">
+                        <div class="wheel" style="margin-top:5px;">
+                            <canvas id="canvas" width="500" height="500"></canvas>
+                            <div class="center-circle">
+                                <div class="triangle"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="wrap-form-select-produto">
+                    <form id="select-produto-roleta">
+                        <div class="half-flex">
+                            <div class="wrap-dados" style="width: 70%;padding:10px;">
+                                <label>Produto</label>
+                                <input id="select-produto" type="text" />
+                                <input id="hidden-produto" type="hidden" />
+                            </div>
+                            <div class="wrap-dados" style="width: 30%;padding:10px;">
+                                <label>Adicionar?</label>
+                                <div class="on-off">
+                                    <div class="btn-circle"></div>
+                                </div>
+                                <!-- <button id="adicionar" class="btn-adicionar">Procurar</button> -->
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="clientes-content contents-logged">
+                <div class="wrap-content-clientes">
+                    <form id="manage-clientes">
+                        <input id="cpf-cliente" type="text" placeholder="procurar CPF">
+                    </form>
+                    <div class="message-pannel message-cliente">
+                        <h3 id="title-message-cliente"></h3>
+                    </div>
+
+                    <div class="wrap-clientes">
+                        <div class="message-pannel">
+                            <h3></h3>
+                        </div>
+                        <div class="wrap-table-clientes"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="users-content contents-logged">
+
+                <div class="wrap-content-user">
+                    <div class="wrap-title">
+                        <h2>CADASTRAR USUÁRIO</h2>
+                    </div>
+                    <div class="wrap-form-logged">
+                        <form class="form-logged" id="form-user">
+                            <div class="wrap-form-user">
+                                <div class="message-pannel-user">
+                                    <h3 id="user-title"></h3>
+                                </div>
+
+                                <div class="wrap-input">
+                                    <label>User</label>
+                                    <input id="name" type="text" name="name" placeholder="Nome" />
+                                </div>
+                                <div class="wrap-input half-flex">
+                                    <div class="">
+                                        <label>Senha</label>
+                                        <input id="password" type="password" name="password" placeholder="Senha" />
+                                    </div>
+                                    <div class="">
+                                        <label>Confirme senha</label>
+                                        <input id="re-password" type="password" name="re-password"
+                                            placeholder="Confirmar senha" />
+                                    </div>
+                                </div>
+                                <div class="wrap-input">
+                                    <label>Nível</label>
+                                    <select id="nivel">
+                                        <option value="admin">ADMIN</option>
+                                        <option value="colaborador" selected>COLABORADOR</option>
+                                    </select>
+                                </div>
+                                <div class="wrap-input">
+                                    <button class="btn-entrar" id="salvar-user">SALVAR</button>
+                                    <button class="btn-entrar" id="editar-user"
+                                        style="display: none;">Atualisar</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <!--wrap-form-->
+                    <div class="wrap-table-usuarios"></div>
+                    <!--wrap-table-usuarios-->
+                </div>
+            </div>
+
+            <div class="send-content contents-logged">
+                <div class="wrap-form">
+                    <form>
+                        <div class="wrap-dados">
+                            <label>Enviar</label>
+                            <input id="box-pontos" type="text" placeholder="0" />
+                            <button id="btn-enviar" type="button" class="btn-enviar"
+                                onclick="sendPoints()">ENVIAR</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="ponto-produto contents-logged">
+                <div class="wrap-pontos-produtos">
+                    <div class="message-pannel-troca" style="margin-top: 5px">
+                        <h3 id="title-message-troca">Pontos trocados com sucesso!!!</h3>
+                    </div>
+                    <div id="wrap-pontos-produtos" class="wrap-form-select-produto">
+                        <form id="form-pontos-produtos">
+                            <div class="half-flex">
+                                <div>
+                                    <label id="label-pontos"></label>
+                                    <input id="input-pontos-produto" type="text" placeholder="Produto" required />
+                                    <input id="trocar-hidden" type="hidden" />
+                                    <input id="pontos-cientes" type="hidden" />
+                                </div>
+                                <div>
+                                    <input id="cliente-cpf" type="text" placeholder="CPF do cliente" required>
+                                </div>
+                                <button id="btn-pontos-produtos" class="btn-enviar"
+                                    style="margin-top: 10px;">Trocar</button>
+                            </div>
+                        </form>
+                        <ul class="ul-list-pontos-produto" style="margin-top:35px;"></ul>
+                    </div>
+                </div>
+                <!--wrap-pontos-produtos-->
+
+            </div>
+        </section>
+
+
+
+    </section>
+    <!--section-flex-->
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/plentz/jquery-maskmoney@master/dist/jquery.maskMoney.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+    <script src="../classes/MainClass.js"></script>
+    <script src="../scripts/user.js"></script>
+    <script src="../scripts/painelRoleta.js"></script>
+</body>
+
+</html>

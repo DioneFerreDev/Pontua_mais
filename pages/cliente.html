@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../styles/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- <div id="overlay" class="overlay"><h2>Aguarde um momento</h2></div> -->
+    <section class="main-section">
+
+        <header class="header-cliente">
+            <div id="container-header" class="container-header">                
+                <ul class="nav-cliente">
+                    <a href="../pages/cliente.html">
+                        <li class="current-page"><i class="fa-solid fa-mug-hot"></i>CLIENTE</li>
+                    </a>
+                    <!-- <a id="login">
+                        <li><i class="fa-solid fa-right-to-bracket"></i></i>LOGIN</li>
+                    </a> -->
+                    <a id="roleta">
+                        <li><i class="fa-solid fa-gamepad"></i>ROLETA</li>
+                    </a>
+                    <a id="pontos-produtos">
+                        <!-- <li><i class="fa-solid fa-arrow-right-arrow-left"></i>PONTOS POR PRODUTOS</li> -->
+                        <li><i class="fa-solid fa-arrows-rotate"></i>PONTOS POR PRODUTOS</li>
+                    </a>
+                </ul>
+            </div>
+        </header>
+
+        <section class="container">
+
+            <div id="wheel-overlay" class="wheel-overlay">
+                <div class="pannel-winner">
+                    <div class="wrap-winner">
+                        <h3 id="winner"></h3>
+                    </div>
+                    <div class="wrap-x">
+                        <h2>X</h2>
+                    </div>
+                </div>
+                <div class="wheel">
+                    <canvas id="canvas" width="500" height="500" onclick="testeRoleta(this)"></canvas>
+                    <div class="center-circle">
+                        <div class="triangle"></div>
+                    </div>
+                    <canvas id="confetti"></canvas>
+                </div>
+            </div>
+
+            <div id="pontos-produtos-overlay" class="pontos-produtos-overlay">
+                <div class="wrap-pontos-produtos">
+                    <div id="close-pontos-produtos" class="circle-x">X</div>
+                    <div class="wrap-form">
+                        <form id="form-pontos-produtos">
+                            <div class="message-pannel">
+                                <h3 id="title-message">Pontos trocados com sucesso!!!</h3>
+                            </div>
+                            <div class="half-flex">
+                                <!-- <div>
+                                    <label id="label-pontos"></label>
+                                    <input id="input-pontos-produto" type="text" placeholder="Produto" />
+                                    <input id="trocar-hidden" type="hidden" />
+                                    <input id="pontos-cientes" type="hidden" />
+                                </div>
+                                <div class="wrap-button">                                    
+                                    <button id="btn-pontos-produtos" class="btn-enviar">Trocar</button>
+                                </div> -->
+                            </div>
+                        </form>
+                    </div>
+                    <ul class="ul-list-pontos-produto" style="margin-top:35px;">
+                        
+                    </ul>
+                </div>
+                <!--wrap-pontos-produtos-->                
+            </div>
+
+            <div class="pannel-pontos">
+                <div>
+                    <h3 class="wrap-effect-pontos" id="pontos-now">0</h3>
+                </div>
+                <div >
+                    <h3 class="wrap-effect-pontos" id="pontos-atuais">Você tem atualmente 500 pontos no total!!</h3>
+                </div>
+            </div>
+
+            <div class="body-container">
+
+                <div class="wrap-form">
+                    <form>
+                        <div class="wrap-dados">
+                            <label>USUÁRIO</label>
+                            <input id="cpf" type="text" autocomplete="off" />
+                            <input id="input-hidden-cliente" type="hidden"/>
+                            <!-- <button id="adicionar" class="btn-adicionar">Procurar</button> -->
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </section>
+
+
+
+
+
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js"></script>
+    <script src="../classes/MainClass.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/plentz/jquery-maskmoney@master/dist/jquery.maskMoney.min.js"></script>
+    <!-- <script src="../scripts/menuAnimation.js"></script> -->
+    <script src="../scripts/userCliente.js"></script>
+</body>
+
+</html>

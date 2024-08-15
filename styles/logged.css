@@ -1,0 +1,43 @@
+.wrap-table-clientes, .wrap-table-produtos, .wrap-table-usuarios{
+	width: 100%;		
+	padding:7px;	
+}
+.wrap-table-usuarios{
+  margin-top: 15px;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;    
+    background-color: #f2f2f2;       
+    border-radius: 5px;         
+  }
+  th, td {
+    border: 1px solid black;
+    padding: 2px;
+    text-align: center;   
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif,"montserrat"; 
+    font-weight: 900;
+  }
+  td{
+    font-size: 15px;    
+  }
+  td:last-of-type{
+     color:red;
+  }
+  tr:nth-child(even){
+    background-color: #dcdde8;
+  }
+  tr:hover{
+    background-color: rgb(195, 183, 247);
+  }
+  th {
+    background-color: black;
+    color: white;    
+  }
+  .message-pannel{
+    margin-top:0 !important;
+
+  }
+  i:hover{
+    cursor: pointer;
+  }

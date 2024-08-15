@@ -1,0 +1,55 @@
+.roleta-content .wrap-form-select-produto {
+    width: 100% !important;
+    /* background-color: orange !important; */
+}
+
+.list-roleta {
+    width: 30%;
+    overflow-y: scroll;
+}
+
+.ul-list-roleta {
+    width: 100%;
+    max-height: 100%;
+    padding: 5px;
+}
+
+.ul-list-roleta li {
+    padding: 7px;
+    border-radius: 5px;
+    background-color: rgba(65, 168, 34, 0.9);
+    list-style: none;
+    text-align: center;
+    margin-top: 5px;
+    font-weight: bolder;
+    border: 1px solid #195c05;
+    cursor: pointer;
+}
+
+.ul-list-roleta li:hover {
+    background-color: rgba(25, 99, 2, 0.9);
+    color: white;
+}
+
+.on-off {
+    position: absolute;
+    width: 33px;
+    border-radius: 30px;
+    border: 1px solid #494f57;
+    color: #98a7b8;
+    background: radial-gradient(circle, white, #909cab);
+    transition: all 0.2s ease;
+}
+
+.btn-circle {
+    position: relative;
+    left: 0;
+    width: 23px;
+    height: 15px;
+    border-radius: 30px;
+    border: 1px solid #494f57;
+    transition: all 0.2s ease;
+    color: #98a7b8;
+    background: radial-gradient(circle, white, #494f57);
+    cursor: pointer;
+}

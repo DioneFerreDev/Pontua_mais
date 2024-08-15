@@ -1,0 +1,3 @@
+ fazer a mudança da cor title ao clicar
+ fazer evento ao fechar janela deslogar o localstorage
+ conferir os campos se estão limpando
